@@ -1,24 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Graph} from './Graph';
+import {Sensor} from './Sensor';
 
 function App() {
+  const [selected, setSelected] = useState(null);
+
+  const Component = selected && selected.component;
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button>Last image</button>
+        <button>List images</button>
+        <button onClick={() => setSelected({component: Sensor})}>Sensor reading</button>
+        <button onClick={() => setSelected({component: Graph, props: {minutes: 60*24}})}>Graph last day</button>
+        <button onClick={() => setSelected({component: Graph, props: {minutes: 60}})}>Graph last hour</button>
       </header>
+      {Component && <Component/>}
     </div>
   );
 }
