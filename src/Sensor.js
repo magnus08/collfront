@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const Sensor = function Sensor() {
 
-  const [values, setValues] = useState({})
+  const [values, setValues] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -13,7 +13,7 @@ export const Sensor = function Sensor() {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios(sensorOne);
+        const res = await axios(sensorOne());
         setLoading(false);
         setValues(res.data)
       } catch (e) {
@@ -37,7 +37,7 @@ export const Sensor = function Sensor() {
     <div>
       <span>Temperature: {temperature}</span>
       <span>Humidity: {humidity}</span>
-      <span>: Pressure {pressure}</span>
+      <span>Pressure: {pressure}</span>
       <span>Time: {timestamp}</span>
     </div>
   );
