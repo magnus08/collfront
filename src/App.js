@@ -5,7 +5,7 @@ import {Graph} from './Graph';
 import {Sensor} from './Sensor';
 
 function App() {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState({component: Sensor});
 
   const Component = selected && selected.component;
   return (
