@@ -31,3 +31,23 @@
     transform: rotate(360deg);
   }
 }
+
+
+.image
+{
+    width: 50%;
+    height: 400px;
+    margin: 5em auto;
+    border: solid 1px #000;
+    overflow: visible;
+}
+.image img
+{
+    /* behavior:url(-ms-transform.htc); */
+    /* Firefox */
+    -moz-transform:rotate(180deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(180deg);
+    /* Opera */
+    -o-transform:rotate(180deg);
+}

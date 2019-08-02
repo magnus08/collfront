@@ -5,7 +5,7 @@ export const Image = function Image() {
   const imgUrl = lastImage();
   console.log("+++ imgUrl", imgUrl);
   return (
-    <div>
+    <div className="image">
       <img src={lastImage()} alt={"Pi Image"} />
     </div>
   );

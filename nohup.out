@@ -1,0 +1,9 @@
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Linux pi 4.19.50-v7+ #896 SMP Thu Jun 20 16:11:44 BST 2019 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
