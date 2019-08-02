@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {sensorOne} from './fetch/urls';
 import axios from 'axios';
 
+const rnd = (v) => v?v.toFixed(1):"-";
+
 export const Sensor = function Sensor() {
 
   const [values, setValues] = useState({});
@@ -31,14 +33,30 @@ export const Sensor = function Sensor() {
   if(error) {
     return <div>Could not retrieve sensor data</div>
   }
-
+    
   const {temperature, humidity, pressure, timestamp} = values;
-  return (
-    <div>
-      <span>Temperature: {temperature}</span>
-      <span>Humidity: {humidity}</span>
-      <span>Pressure: {pressure}</span>
-      <span>Time: {timestamp}</span>
-    </div>
+    return (
+	<>
+	    <div class="row">
+	      <div class="six wide column">
+            <span>Temperature: {rnd(temperature)}</span>
+              </div>
+  	    </div>
+	    <div class="row">
+	      <div class="six wide column">
+               <span>Humidity: {rnd(humidity)}</span>
+              </div>
+  	    </div>
+	    <div class="row">
+	      <div class="six wide column">
+            <span>Pressure: {rnd(pressure)}</span>
+              </div>
+  	    </div>
+	    <div class="row">
+	      <div class="six wide column">
+            <span>Time: {timestamp}</span>
+              </div>
+  	    </div>
+    </>
   );
 };
